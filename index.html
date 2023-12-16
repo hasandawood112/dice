@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Number Generator</title>
+    <style>
+        button {
+            font-size: 24px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Random Number Generator</h1>
+
+<button onclick="generateRandomNumber()">Generate Random Number</button>
+
+<script>
+    function generateRandomNumber() {
+        // Generate a random number between 1 and 6
+        var randomNumber = Math.floor(Math.random() * 6) + 1;
+
+        // Display the generated number
+       // alert("Generated Number: " + randomNumber);
+
+        // Read the generated number out loud
+        var message = "The generated number is " + randomNumber;
+        var utterance = new SpeechSynthesisUtterance(message);
+        window.speechSynthesis.speak(utterance);
+    }
+</script>
+
+</body>
+</html>
