@@ -1,0 +1,87 @@
+ body {
+            background-color: #557778;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            color: white;
+        }
+
+        h1 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        button {
+            font-size: 24px;
+            padding: 15px 30px;
+            background-color: #8AA39B;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s, box-shadow 0.3s;
+            margin-bottom: 20px;
+        }
+
+        button:hover {
+            background-color: #6C8E85;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .person-container {
+            display: flex;
+            position: absolute;
+        }
+
+        .person-box {
+            width: 150px;
+            height: 150px;
+            background-color: #8AA39B;
+            margin: 10px;
+            text-align: center;
+            font-size: 1.5em;
+            transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+        }
+
+        .person-box h2 {
+            margin: 0;
+        }
+
+        .person-box p {
+            margin: 0;
+            font-size: 1.2em;
+        }
+
+        .person-box:hover {
+            background-color: #6C8E85;
+            transform: scale(1.1);
+            box-shadow: 0 0 20px 5px #fff;
+        }
+
+        .glow {
+            animation: glowEffect 1s infinite alternate;
+        }
+
+        @keyframes glowEffect {
+            0% {
+                box-shadow: 0 0 20px 5px #fff;
+            }
+            100% {
+                box-shadow: 0 0 25px 8px #fff;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .person-box {
+                width: 120px;
+                height: 120px;
+                font-size: 1em;
+            }
+        }
