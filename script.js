@@ -10,7 +10,8 @@
         updatePersonPortion(currentPerson, randomNumber1, randomNumber2);
 
         // Read the generated numbers out loud
-        var message = "Person " + currentPerson + ": Your turn. The generated numbers are " + randomNumber1 + " and " + randomNumber2;
+        var colorName = getColorName(currentPerson);
+        var message = colorName + ": Your turn. You got " + randomNumber1 + " and " + randomNumber2;
         var utterance = new SpeechSynthesisUtterance(message);
         window.speechSynthesis.speak(utterance);
 
@@ -19,7 +20,7 @@
             consecutiveSixes++;
 
             if (consecutiveSixes === 2) {
-                var message = "Person " + currentPerson + " got 6 Two times in a row. Skipping to next person.";
+                var message = colorName + " got 6 Two times in a row. Skipping to the next player.";
                 var utterance = new SpeechSynthesisUtterance(message);
                 window.speechSynthesis.speak(utterance);
 
@@ -61,5 +62,20 @@
         currentPerson++;
         if (currentPerson > 4) {
             currentPerson = 1;
+        }
+    }
+
+    function getColorName(person) {
+        switch (person) {
+            case 1:
+                return "Red";
+            case 2:
+                return "Yellow";
+            case 3:
+                return "Green";
+            case 4:
+                return "Blue";
+            default:
+                return "";
         }
     }
